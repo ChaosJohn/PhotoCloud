@@ -14,7 +14,7 @@
 #import "Qiniu.h"
 #import "MenuBarController.h"
 #import "MASPreferences.h"
-#import "ShortcutRecorder.h"
+#import <ShortcutRecorder/ShortcutRecorder.h>
 #import <PTHotKey/PTHotKeyCenter.h>
 #import <PTHotKey/PTHotKey+ShortcutRecorder.h>
 #import "PVAsyncImageView.h"

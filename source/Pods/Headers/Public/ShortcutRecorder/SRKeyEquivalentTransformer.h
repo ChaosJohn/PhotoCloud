@@ -1,1 +1,0 @@
-../../../ShortcutRecorder/Library/SRKeyEquivalentTransformer.h

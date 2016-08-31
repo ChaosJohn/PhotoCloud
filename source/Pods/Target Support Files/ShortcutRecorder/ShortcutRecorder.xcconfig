@@ -1,1 +1,0 @@
-SHORTCUTRECORDER_OTHER_LDFLAGS = -framework "Carbon" -framework "Cocoa"

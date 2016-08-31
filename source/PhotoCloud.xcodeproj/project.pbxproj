@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		062A2AA41D67778000957D9B /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062A2A9E1D6776F500957D9B /* PTHotKey.framework */; };
 		062A2AA51D67778000957D9B /* PTHotKey.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 062A2A9E1D6776F500957D9B /* PTHotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0638F8851D76ABB4006CE17B /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0638F8841D76ABB4006CE17B /* ShortcutRecorder.framework */; };
+		0638F8861D76ABB4006CE17B /* ShortcutRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0638F8841D76ABB4006CE17B /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		064B4BA31D658806000B5E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B4BA21D658806000B5E7C /* AppDelegate.swift */; };
 		064B4BA71D658806000B5E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 064B4BA61D658806000B5E7C /* Assets.xcassets */; };
 		064B4BB31D65885A000B5E7C /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B4BB21D65885A000B5E7C /* Finder.swift */; };
@@ -49,7 +51,7 @@
 		06BFA6411D66E7A100B40124 /* HistoryWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA63F1D66E7A100B40124 /* HistoryWindowController.xib */; };
 		06BFA6451D66ECC200B40124 /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6441D66ECC200B40124 /* HistoryTableCell.swift */; };
 		06BFA6471D66ECDC00B40124 /* HistoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA6461D66ECDC00B40124 /* HistoryTableCell.xib */; };
-		41901AEA6B961BEEA7CA3F6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4229812EC5344005E862167 /* libPods.a */; };
+		7EDEE94EE08F7136DDBC54DA /* libPods-PhotoCloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67C8629CC5102529B4AA3E /* libPods-PhotoCloud.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +71,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				062A2AA51D67778000957D9B /* PTHotKey.framework in Embed Frameworks */,
+				0638F8861D76ABB4006CE17B /* ShortcutRecorder.framework in Embed Frameworks */,
 				06BFA6351D66D58B00B40124 /* Realm.framework in Embed Frameworks */,
 				06BFA6311D669B8900B40124 /* SnipManager.framework in Embed Frameworks */,
 				06BFA6371D66D58B00B40124 /* RealmSwift.framework in Embed Frameworks */,
@@ -80,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		062A2A9E1D6776F500957D9B /* PTHotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PTHotKey.framework; path = PhotoCloud/Framework/PTHotKey.framework; sourceTree = "<group>"; };
+		0638F8841D76ABB4006CE17B /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = Carthage/Build/Mac/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		064B4B9F1D658806000B5E7C /* PhotoCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064B4BA21D658806000B5E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		064B4BA61D658806000B5E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,9 +138,9 @@
 		06BFA63F1D66E7A100B40124 /* HistoryWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryWindowController.xib; sourceTree = "<group>"; };
 		06BFA6441D66ECC200B40124 /* HistoryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
 		06BFA6461D66ECDC00B40124 /* HistoryTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableCell.xib; sourceTree = "<group>"; };
-		C25F457EC504BD50B7BFFC90 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		D4229812EC5344005E862167 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB8193F15BF3D357399DCA8C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8A67C8629CC5102529B4AA3E /* libPods-PhotoCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoCloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72AD60472C91707FDAE3AEA /* Pods-PhotoCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoCloud/Pods-PhotoCloud.release.xcconfig"; sourceTree = "<group>"; };
+		E03396B2D7DD8876BC8F32AB /* Pods-PhotoCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoCloud/Pods-PhotoCloud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,11 +148,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0638F8851D76ABB4006CE17B /* ShortcutRecorder.framework in Frameworks */,
 				06BFA6341D66D58B00B40124 /* Realm.framework in Frameworks */,
 				062A2AA41D67778000957D9B /* PTHotKey.framework in Frameworks */,
 				06BFA6301D669B8900B40124 /* SnipManager.framework in Frameworks */,
 				06BFA6361D66D58B00B40124 /* RealmSwift.framework in Frameworks */,
-				41901AEA6B961BEEA7CA3F6A /* libPods.a in Frameworks */,
+				7EDEE94EE08F7136DDBC54DA /* libPods-PhotoCloud.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +165,8 @@
 			children = (
 				064B4BA11D658806000B5E7C /* PhotoCloud */,
 				064B4BA01D658806000B5E7C /* Products */,
-				253B63D85A54F11FD78FD202 /* Pods */,
 				33B477E4E69B07F6B2FE0DFA /* Frameworks */,
+				B855A348BBE5E71A67ACC2C1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,25 +331,26 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		253B63D85A54F11FD78FD202 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EB8193F15BF3D357399DCA8C /* Pods.debug.xcconfig */,
-				C25F457EC504BD50B7BFFC90 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		33B477E4E69B07F6B2FE0DFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0638F8841D76ABB4006CE17B /* ShortcutRecorder.framework */,
 				062A2A9E1D6776F500957D9B /* PTHotKey.framework */,
 				06BFA6321D66D58B00B40124 /* Realm.framework */,
 				06BFA6331D66D58B00B40124 /* RealmSwift.framework */,
 				06BFA62F1D669B8900B40124 /* SnipManager.framework */,
-				D4229812EC5344005E862167 /* libPods.a */,
+				8A67C8629CC5102529B4AA3E /* libPods-PhotoCloud.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B855A348BBE5E71A67ACC2C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E03396B2D7DD8876BC8F32AB /* Pods-PhotoCloud.debug.xcconfig */,
+				A72AD60472C91707FDAE3AEA /* Pods-PhotoCloud.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,13 +360,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 064B4BAE1D658806000B5E7C /* Build configuration list for PBXNativeTarget "PhotoCloud" */;
 			buildPhases = (
-				F05C7E2086932ED7F29D5D76 /* Check Pods Manifest.lock */,
+				747FF62696DF692B3B71649A /* [CP] Check Pods Manifest.lock */,
 				064B4B9B1D658806000B5E7C /* Sources */,
 				064B4B9C1D658806000B5E7C /* Frameworks */,
 				064B4B9D1D658806000B5E7C /* Resources */,
-				B42FA92E6D01A14130030AB6 /* Copy Pods Resources */,
 				06BFA60E1D65E83100B40124 /* Embed Frameworks */,
 				068320FF1D6AF6B800EF9F57 /* CopyFiles */,
+				817C9C37A808CDF84EC7FF05 /* [CP] Embed Pods Frameworks */,
+				FC2A787C5AF550389AF352A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,34 +430,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B42FA92E6D01A14130030AB6 /* Copy Pods Resources */ = {
+		747FF62696DF692B3B71649A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F05C7E2086932ED7F29D5D76 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		817C9C37A808CDF84EC7FF05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoCloud/Pods-PhotoCloud-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2A787C5AF550389AF352A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoCloud/Pods-PhotoCloud-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -590,7 +612,7 @@
 		};
 		064B4BAF1D658806000B5E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB8193F15BF3D357399DCA8C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E03396B2D7DD8876BC8F32AB /* Pods-PhotoCloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -611,7 +633,7 @@
 		};
 		064B4BB01D658806000B5E7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C25F457EC504BD50B7BFFC90 /* Pods.release.xcconfig */;
+			baseConfigurationReference = A72AD60472C91707FDAE3AEA /* Pods-PhotoCloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
