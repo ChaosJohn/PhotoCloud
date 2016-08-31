@@ -31,7 +31,7 @@ public class QiniuProvider {
             }, params: nil, checkCrc: true, cancellationSignal: nil)
         var fileName = fileUrl.lastPathComponent
         if let name = fileName where !Preferences.SharedPreferences().filePrefix.isEmpty  {
-            fileName = Preferences.SharedPreferences().filePrefix + "_" + name
+            fileName = Preferences.SharedPreferences().filePrefix + "_" + name.stringByReplacingOccurrencesOfString(" ", withString: "_")
         }
         upManager.putFile(fileUrl.path, key: fileName, token: token, complete: { (info, key, resp) in
             if (resp == nil) {
