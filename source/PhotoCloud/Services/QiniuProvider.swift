@@ -14,15 +14,16 @@ public class QiniuProvider {
     
     public func uploadFile(fileUrl:NSURL) {
         //init qnConfig
+        LogProvider.writeLogFile("uploadFile: " + fileUrl.absoluteString)
         guard let config = Preferences.SharedPreferences().currentQNAccountConfig else {
             // need set pref
+            LogProvider.writeLogFile("uploadFile: error not config account")
+            self.showNotify("请先配置七牛账户信息")
             return
         }
         
         let qx =  Qiniu.init(QNURL: PhotoCloudStrings.QNURL, withQNBucketName: config.Bucket, withQNAccessKey: config.Access_Key, withQNSecretKey: config.Secret_Key)
         let token = qx.upToken()
-        NSLog("token: %@", token)
-        NSLog("fileUrl: %@", fileUrl)
         let upManager = QNUploadManager.init(configuration: QNConfiguration.build({ (build) in
             build.chunkSize =  4 * 1024 * 1024
         }))
@@ -36,10 +37,12 @@ public class QiniuProvider {
         upManager.putFile(fileUrl.path, key: fileName, token: token, complete: { (info, key, resp) in
             if (resp == nil) {
                 NSLog("upload fail %@", info.error.description)
+                LogProvider.writeLogFile("uploadFile: complete error: " + info.error.description)
                 self.showNotify( "文件上传失败了伙计",desc: info.error.description)
                 return
             }
             NSLog("upload success: %@", key ?? "")
+            LogProvider.writeLogFile("uploadFile: success: key: " + (key ?? ""))
             var fileName:String = ""
             if let userPutfileName = key {
                 fileName = userPutfileName
@@ -48,6 +51,7 @@ public class QiniuProvider {
             }
             let remoteUrl = "\(config.WebUrl!)/\(fileName)"
             NSLog("upload remote url: %@", remoteUrl)
+            LogProvider.writeLogFile("uploadFile: success: remoteUrl:  " + remoteUrl)
             let pasteBoard = NSPasteboard.generalPasteboard()
             pasteBoard.declareTypes([NSStringPboardType], owner: nil)
             pasteBoard.setString(remoteUrl, forType: NSStringPboardType)
@@ -56,7 +60,7 @@ public class QiniuProvider {
             }, option: uploadOption)
     }
     
-    func showNotify(title:String, desc:String){
+    func showNotify(title:String, desc:String = ""){
         if !Preferences.SharedPreferences().isNotifyEnable {
             return
         }

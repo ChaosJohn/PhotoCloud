@@ -22,5 +22,6 @@
 #import "PINCache.h"
 #import "SKImageView.h"
 #import "RSVerticallyCenteredTextFieldCell.h"
+#import "LogProvider.h"
 
 #endif /* PhotoCloud_Bridge_Header_h */

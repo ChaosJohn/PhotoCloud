@@ -51,6 +51,7 @@
 		06BFA6411D66E7A100B40124 /* HistoryWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA63F1D66E7A100B40124 /* HistoryWindowController.xib */; };
 		06BFA6451D66ECC200B40124 /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6441D66ECC200B40124 /* HistoryTableCell.swift */; };
 		06BFA6471D66ECDC00B40124 /* HistoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA6461D66ECDC00B40124 /* HistoryTableCell.xib */; };
+		06DC0AAE1D76D71C00D787FA /* LogProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DC0AAD1D76D71C00D787FA /* LogProvider.m */; };
 		7EDEE94EE08F7136DDBC54DA /* libPods-PhotoCloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67C8629CC5102529B4AA3E /* libPods-PhotoCloud.a */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,8 @@
 		06BFA63F1D66E7A100B40124 /* HistoryWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryWindowController.xib; sourceTree = "<group>"; };
 		06BFA6441D66ECC200B40124 /* HistoryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
 		06BFA6461D66ECDC00B40124 /* HistoryTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableCell.xib; sourceTree = "<group>"; };
+		06DC0AAC1D76D71C00D787FA /* LogProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogProvider.h; sourceTree = "<group>"; };
+		06DC0AAD1D76D71C00D787FA /* LogProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogProvider.m; sourceTree = "<group>"; };
 		8A67C8629CC5102529B4AA3E /* libPods-PhotoCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoCloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72AD60472C91707FDAE3AEA /* Pods-PhotoCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoCloud/Pods-PhotoCloud.release.xcconfig"; sourceTree = "<group>"; };
 		E03396B2D7DD8876BC8F32AB /* Pods-PhotoCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoCloud/Pods-PhotoCloud.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				068320F91D6A93FB00EF9F57 /* RSVerticallyCenteredTextFieldCell.m */,
 				064B4BB21D65885A000B5E7C /* Finder.swift */,
 				068321001D6AF98700EF9F57 /* UITools.swift */,
+				06DC0AAC1D76D71C00D787FA /* LogProvider.h */,
+				06DC0AAD1D76D71C00D787FA /* LogProvider.m */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BFA6161D65E90800B40124 /* MASPreferencesWindowController.m in Sources */,
+				06DC0AAE1D76D71C00D787FA /* LogProvider.m in Sources */,
 				068321011D6AF98700EF9F57 /* UITools.swift in Sources */,
 				06BFA63C1D66D9CF00B40124 /* PhotoCloudStoreProvider.swift in Sources */,
 				06BFA6181D65F0F700B40124 /* Preferences.swift in Sources */,

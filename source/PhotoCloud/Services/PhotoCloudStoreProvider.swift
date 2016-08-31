@@ -28,11 +28,8 @@ class PhotoCloudStoreProvider {
     lazy var sortDescriptorsForPhotoCloudList: [SortDescriptor] = [SortDescriptor(property: "createTime", ascending: false)]
 
     /// save item
-    func addItem(item: PhotoCloudItemModel) {
+    func addItem(item: Object) {
         let backgroundRealm = try! Realm()
-        if backgroundRealm.objectForPrimaryKey(PhotoCloudItemModel.self, key: item.fileName) == nil {
-            //new item
-        }
         backgroundRealm.beginWrite()
         backgroundRealm.add(item, update: true)
         try!  backgroundRealm.commitWrite()

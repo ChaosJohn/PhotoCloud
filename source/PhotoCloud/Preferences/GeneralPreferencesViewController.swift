@@ -24,12 +24,13 @@ class GeneralPreferencesViewController: NSViewController {
     }
     
     @IBAction func checkStateNotify(sender: NSButton) {
-        Preferences.SharedPreferences().isAtLogin = sender.state != NSOffState
+        Preferences.SharedPreferences().isNotifyEnable = sender.state != NSOffState
+       
     }
     
     @IBAction func checkStateAtLogin(sender: NSButton) {
         //http://atjason.com/en/Cocoa/SwiftCocoa_Auto%20Launch%20at%20Login.html  未实现
-        Preferences.SharedPreferences().isNotifyEnable = sender.state != NSOffState
+        Preferences.SharedPreferences().isAtLogin = sender.state != NSOffState
         let appBundleIdentifier = NSBundle.mainBundle().bundleIdentifier ?? ""
         let autoLaunch = (sender.state == NSOnState)
         if SMLoginItemSetEnabled(appBundleIdentifier, autoLaunch) {
