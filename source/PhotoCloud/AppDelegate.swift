@@ -108,7 +108,7 @@ extension AppDelegate: MenuBarControllerDelegate {
 extension AppDelegate: HotKeyMonitorDelegate {
     
     func onHotKeyMonitorUpload() {
-        let urls = FinderSelectionProvider.instance.getSelectedImages()
+        let urls = FinderSelectionProvider.instance.getSelectedFAcceptableFiles()
         for url in urls {
             QiniuProvider.instance.uploadFile(url)
         }

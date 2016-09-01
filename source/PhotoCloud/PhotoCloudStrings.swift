@@ -12,7 +12,7 @@ struct PhotoCloudStrings {
      static let APPNAME = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String ?? "PhotoCloud"
      static let APP_VERSION = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
      static let COMMANDLINE_VERSION = "1.0.0"
-     static let AcceptableImageFile = ["png","jpg","jpeg","gif"]
+     static let AcceptableFile = ["png","jpg","jpeg","gif","mp4","mov","zip","pdf"]
     
      static let QNURL = "http://www.7xptab.com1.z0.glb.clouddn.com/"
     

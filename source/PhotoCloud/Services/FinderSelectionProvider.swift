@@ -56,13 +56,13 @@ public class FinderSelectionProvider {
     }
     
     
-    public func getSelectedImages()->[NSURL] {
+    public func getSelectedFAcceptableFiles()->[NSURL] {
        let urls = getSelectedFiles()
         return urls.filter({ (item) -> Bool in
             guard let fileExtension = item.path?.fileExtension() else {
                 return false
             }
-            return PhotoCloudStrings.AcceptableImageFile.contains(fileExtension.lowercaseString)
+            return PhotoCloudStrings.AcceptableFile.contains(fileExtension.lowercaseString)
         })
     }
     
