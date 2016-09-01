@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class QiniuProvider {
+public class QiniuProvider: UploadProtocol {
     
     public static let instance = QiniuProvider()
     
@@ -18,7 +18,7 @@ public class QiniuProvider {
         guard let config = Preferences.SharedPreferences().currentQNAccountConfig else {
             // need set pref
             LogProvider.writeLogFile("uploadFile: error not config account")
-            self.showNotify("请先配置七牛账户信息")
+            NotifyHelper.showNotify("请先配置七牛账户信息")
             return
         }
         
@@ -38,7 +38,7 @@ public class QiniuProvider {
             if (resp == nil) {
                 NSLog("upload fail %@", info.error.description)
                 LogProvider.writeLogFile("uploadFile: complete error: " + info.error.description)
-                self.showNotify( "文件上传失败了伙计",desc: info.error.description)
+                NotifyHelper.showNotify( "文件上传失败了伙计",desc: info.error.description)
                 return
             }
             NSLog("upload success: %@", key ?? "")
@@ -55,23 +55,9 @@ public class QiniuProvider {
             let pasteBoard = NSPasteboard.generalPasteboard()
             pasteBoard.declareTypes([NSStringPboardType], owner: nil)
             pasteBoard.setString(remoteUrl, forType: NSStringPboardType)
-            self.showNotify( "文件上传成功\(fileName)",desc: remoteUrl)
+            NotifyHelper.showNotify( "文件上传成功\(fileName)",desc: remoteUrl)
             PhotoCloudStoreProvider.SharedPhotoCloudStore().addItem(PhotoCloudItemModel(fileName: fileName,downloadUrl: remoteUrl))
             }, option: uploadOption)
     }
-    
-    func showNotify(title:String, desc:String = ""){
-        if !Preferences.SharedPreferences().isNotifyEnable {
-            return
-        }
-        NSApp.activateIgnoringOtherApps(true)
-        let notification = NSUserNotification.init()
-        notification.title = title
-        notification.informativeText = desc
-        notification.soundName = NSUserNotificationDefaultSoundName
-        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
-    }
-    
-    
     
 }

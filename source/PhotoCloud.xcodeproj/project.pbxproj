@@ -28,12 +28,14 @@
 		068320FD1D6AE9B800EF9F57 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068320FB1D6AE9B800EF9F57 /* GeneralPreferencesViewController.swift */; };
 		068320FE1D6AE9B800EF9F57 /* GeneralPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068320FC1D6AE9B800EF9F57 /* GeneralPreferencesViewController.xib */; };
 		068321011D6AF98700EF9F57 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068321001D6AF98700EF9F57 /* UITools.swift */; };
+		06893B601D77FE610065AFE3 /* UploadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06893B5F1D77FE610065AFE3 /* UploadProtocol.swift */; };
+		06893B631D77FFA10065AFE3 /* NotifyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06893B621D77FFA10065AFE3 /* NotifyHelper.swift */; };
 		06BFA5F51D65E3D000B40124 /* UserPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA5F31D65E3D000B40124 /* UserPreferencesViewController.swift */; };
 		06BFA5F61D65E3D000B40124 /* UserPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA5F41D65E3D000B40124 /* UserPreferencesViewController.xib */; };
 		06BFA6151D65E90800B40124 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA6121D65E90800B40124 /* MASPreferencesWindow.xib */; };
 		06BFA6161D65E90800B40124 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6141D65E90800B40124 /* MASPreferencesWindowController.m */; };
 		06BFA6181D65F0F700B40124 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6171D65F0F700B40124 /* Preferences.swift */; };
-		06BFA61A1D65F96200B40124 /* QiniuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6191D65F96200B40124 /* QiniuProvider.swift */; };
+		06BFA61A1D65F96200B40124 /* QiniuUploadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6191D65F96200B40124 /* QiniuUploadProvider.swift */; };
 		06BFA6201D66003300B40124 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA61E1D66003300B40124 /* MainMenu.xib */; };
 		06BFA6261D66040900B40124 /* MenuBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6231D66040900B40124 /* MenuBarController.m */; };
 		06BFA6271D66040900B40124 /* StatusItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6251D66040900B40124 /* StatusItemButton.m */; };
@@ -114,6 +116,8 @@
 		068320FB1D6AE9B800EF9F57 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		068320FC1D6AE9B800EF9F57 /* GeneralPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesViewController.xib; sourceTree = "<group>"; };
 		068321001D6AF98700EF9F57 /* UITools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
+		06893B5F1D77FE610065AFE3 /* UploadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadProtocol.swift; path = PhotoCloud/Services/Upload/UploadProtocol.swift; sourceTree = SOURCE_ROOT; };
+		06893B621D77FFA10065AFE3 /* NotifyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyHelper.swift; sourceTree = "<group>"; };
 		06BFA5F31D65E3D000B40124 /* UserPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesViewController.swift; sourceTree = "<group>"; };
 		06BFA5F41D65E3D000B40124 /* UserPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserPreferencesViewController.xib; sourceTree = "<group>"; };
 		06BFA6101D65E90800B40124 /* MASPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferences.h; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 		06BFA6131D65E90800B40124 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
 		06BFA6141D65E90800B40124 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
 		06BFA6171D65F0F700B40124 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
-		06BFA6191D65F96200B40124 /* QiniuProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiniuProvider.swift; sourceTree = "<group>"; };
+		06BFA6191D65F96200B40124 /* QiniuUploadProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiniuUploadProvider.swift; sourceTree = "<group>"; };
 		06BFA61F1D66003300B40124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = PhotoCloud/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		06BFA6221D66040900B40124 /* MenuBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBarController.h; sourceTree = "<group>"; };
 		06BFA6231D66040900B40124 /* MenuBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBarController.m; sourceTree = "<group>"; };
@@ -224,9 +228,9 @@
 		064B4BB41D6588F6000B5E7C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				06893B611D77FF560065AFE3 /* Upload */,
 				064B4BB51D658902000B5E7C /* FinderSelectionProvider.swift */,
 				06BFA6171D65F0F700B40124 /* Preferences.swift */,
-				06BFA6191D65F96200B40124 /* QiniuProvider.swift */,
 				06BFA63B1D66D9CF00B40124 /* PhotoCloudStoreProvider.swift */,
 			);
 			path = Services;
@@ -292,6 +296,16 @@
 				06667E221D67066100330D7C /* PINMemoryCache.m */,
 			);
 			path = PINCache;
+			sourceTree = "<group>";
+		};
+		06893B611D77FF560065AFE3 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				06BFA6191D65F96200B40124 /* QiniuUploadProvider.swift */,
+				06893B5F1D77FE610065AFE3 /* UploadProtocol.swift */,
+				06893B621D77FFA10065AFE3 /* NotifyHelper.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		06BFA60F1D65E90800B40124 /* MASPreferences */ = {
@@ -498,13 +512,15 @@
 				06BFA62A1D660D5100B40124 /* ShortcutPreferencesViewController.swift in Sources */,
 				06BFA63A1D66D5FA00B40124 /* PhotoCloudItemModel.swift in Sources */,
 				06BFA6271D66040900B40124 /* StatusItemButton.m in Sources */,
-				06BFA61A1D65F96200B40124 /* QiniuProvider.swift in Sources */,
+				06BFA61A1D65F96200B40124 /* QiniuUploadProvider.swift in Sources */,
 				064B4BB31D65885A000B5E7C /* Finder.swift in Sources */,
 				06BFA6401D66E7A100B40124 /* HistoryWindowController.swift in Sources */,
 				06667E231D67066100330D7C /* PINCache.m in Sources */,
 				068320FD1D6AE9B800EF9F57 /* GeneralPreferencesViewController.swift in Sources */,
+				06893B631D77FFA10065AFE3 /* NotifyHelper.swift in Sources */,
 				064B4BB91D658996000B5E7C /* Extensions.swift in Sources */,
 				064B4BA31D658806000B5E7C /* AppDelegate.swift in Sources */,
+				06893B601D77FE610065AFE3 /* UploadProtocol.swift in Sources */,
 				064B4BD21D65B0B9000B5E7C /* Qiniu.m in Sources */,
 				06667E241D67066100330D7C /* PINDiskCache.m in Sources */,
 				064B4BBB1D658B9D000B5E7C /* PhotoCloudStrings.swift in Sources */,
