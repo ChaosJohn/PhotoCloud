@@ -13,14 +13,14 @@ class HistoryTableCell: NSTableCellView {
 
     @IBOutlet var imageview: SKImageView!
     @IBOutlet var tx_downloadUrl: NSTextField!
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
     }
     
-    @IBAction func pressCopyAction(sender: AnyObject) {
-        let pasteBoard = NSPasteboard.generalPasteboard()
+    @IBAction func pressCopyAction(_ sender: AnyObject) {
+        let pasteBoard = NSPasteboard.general()
         pasteBoard.declareTypes([NSStringPboardType], owner: nil)
         pasteBoard.setString(tx_downloadUrl.stringValue, forType: NSStringPboardType)
     }

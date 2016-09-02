@@ -18,7 +18,7 @@ class PhotoCloudItemModel: Object {
         self.init()
         self.fileName = fileName
         self.downloadUrl = downloadUrl
-        self.createTime = String(Int64(NSDate().timeIntervalSince1970*1000))
+        self.createTime = String(Int64(Date().timeIntervalSince1970*1000))
     }
     
     override static func primaryKey() -> String? {

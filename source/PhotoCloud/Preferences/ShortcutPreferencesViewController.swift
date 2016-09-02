@@ -16,15 +16,15 @@ class ShortcutPreferencesViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        shortcutview_upload.bind("value", toObject: NSUserDefaultsController.sharedUserDefaultsController(), withKeyPath: HotKeyMonitorUpload, options: nil )
+        shortcutview_upload.bind("value", to: NSUserDefaultsController.shared(), withKeyPath: HotKeyMonitorUpload, options: nil )
         shortcutview_upload.delegate = self
         shortcutview_upload.allowsEscapeToCancelRecording = true
-        shortcutview_upload.enabled = true
+        shortcutview_upload.isEnabled = true
         
-        shortcutview_snip.bind("value", toObject: NSUserDefaultsController.sharedUserDefaultsController(), withKeyPath: HotKeyMonitorCapture, options: nil )
+        shortcutview_snip.bind("value", to: NSUserDefaultsController.shared(), withKeyPath: HotKeyMonitorCapture, options: nil )
         shortcutview_snip.delegate = self
         shortcutview_snip.allowsEscapeToCancelRecording = true
-        shortcutview_snip.enabled = true
+        shortcutview_snip.isEnabled = true
     }
     
 }
@@ -54,16 +54,16 @@ extension ShortcutPreferencesViewController: MASPreferencesViewController {
 // MARK: - SRRecorderControl
 extension ShortcutPreferencesViewController: SRRecorderControlDelegate ,SRValidatorDelegate {
 
-    func shortcutRecorderShouldBeginRecording(aRecorder: SRRecorderControl!) -> Bool {
-        PTHotKeyCenter.sharedCenter().pause()
+    func shortcutRecorderShouldBeginRecording(_ aRecorder: SRRecorderControl!) -> Bool {
+        PTHotKeyCenter.shared().pause()
         return true
     }
     
-    func shortcutRecorderDidEndRecording(aRecorder: SRRecorderControl!) {
-        PTHotKeyCenter.sharedCenter().resume()
+    func shortcutRecorderDidEndRecording(_ aRecorder: SRRecorderControl!) {
+        PTHotKeyCenter.shared().resume()
     }
     
-    func shortcutValidatorShouldCheckMenu(aValidator: SRValidator!) -> Bool {
+    func shortcutValidatorShouldCheckMenu(_ aValidator: SRValidator!) -> Bool {
         return false
     }
 

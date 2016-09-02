@@ -19,6 +19,10 @@
 		064B4BBB1D658B9D000B5E7C /* PhotoCloudStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B4BBA1D658B9D000B5E7C /* PhotoCloudStrings.swift */; };
 		064B4BC11D659334000B5E7C /* HotKeyMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 064B4BBE1D659334000B5E7C /* HotKeyMonitor.m */; };
 		064B4BD21D65B0B9000B5E7C /* Qiniu.m in Sources */ = {isa = PBXBuildFile; fileRef = 064B4BD11D65B0B9000B5E7C /* Qiniu.m */; };
+		064F9F3F1D7920E800EFC638 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F9F3D1D7920E800EFC638 /* Realm.framework */; };
+		064F9F401D7920E800EFC638 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 064F9F3D1D7920E800EFC638 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		064F9F411D7920E800EFC638 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F9F3E1D7920E800EFC638 /* RealmSwift.framework */; };
+		064F9F421D7920E800EFC638 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 064F9F3E1D7920E800EFC638 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06667E1A1D67013A00330D7C /* PVAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06667E191D67013A00330D7C /* PVAsyncImageView.m */; };
 		06667E231D67066100330D7C /* PINCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 06667E1E1D67066100330D7C /* PINCache.m */; };
 		06667E241D67066100330D7C /* PINDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 06667E201D67066100330D7C /* PINDiskCache.m */; };
@@ -43,10 +47,6 @@
 		06BFA62B1D660D5100B40124 /* ShortcutPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BFA6291D660D5100B40124 /* ShortcutPreferencesViewController.xib */; };
 		06BFA6301D669B8900B40124 /* SnipManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BFA62F1D669B8900B40124 /* SnipManager.framework */; };
 		06BFA6311D669B8900B40124 /* SnipManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06BFA62F1D669B8900B40124 /* SnipManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		06BFA6341D66D58B00B40124 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BFA6321D66D58B00B40124 /* Realm.framework */; };
-		06BFA6351D66D58B00B40124 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06BFA6321D66D58B00B40124 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		06BFA6361D66D58B00B40124 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BFA6331D66D58B00B40124 /* RealmSwift.framework */; };
-		06BFA6371D66D58B00B40124 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06BFA6331D66D58B00B40124 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06BFA63A1D66D5FA00B40124 /* PhotoCloudItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA6391D66D5FA00B40124 /* PhotoCloudItemModel.swift */; };
 		06BFA63C1D66D9CF00B40124 /* PhotoCloudStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA63B1D66D9CF00B40124 /* PhotoCloudStoreProvider.swift */; };
 		06BFA6401D66E7A100B40124 /* HistoryWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFA63E1D66E7A100B40124 /* HistoryWindowController.swift */; };
@@ -73,11 +73,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				064F9F401D7920E800EFC638 /* Realm.framework in Embed Frameworks */,
+				064F9F421D7920E800EFC638 /* RealmSwift.framework in Embed Frameworks */,
 				062A2AA51D67778000957D9B /* PTHotKey.framework in Embed Frameworks */,
 				0638F8861D76ABB4006CE17B /* ShortcutRecorder.framework in Embed Frameworks */,
-				06BFA6351D66D58B00B40124 /* Realm.framework in Embed Frameworks */,
 				06BFA6311D669B8900B40124 /* SnipManager.framework in Embed Frameworks */,
-				06BFA6371D66D58B00B40124 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +100,8 @@
 		064B4BCE1D659404000B5E7C /* PhotoCloud-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoCloud-Bridge-Header.h"; sourceTree = "<group>"; };
 		064B4BD01D65B0B9000B5E7C /* Qiniu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Qiniu.h; sourceTree = "<group>"; };
 		064B4BD11D65B0B9000B5E7C /* Qiniu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Qiniu.m; sourceTree = "<group>"; };
+		064F9F3D1D7920E800EFC638 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		064F9F3E1D7920E800EFC638 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		06667E181D67013A00330D7C /* PVAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAsyncImageView.h; sourceTree = "<group>"; };
 		06667E191D67013A00330D7C /* PVAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAsyncImageView.m; sourceTree = "<group>"; };
 		06667E1C1D67066100330D7C /* Nullability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nullability.h; sourceTree = "<group>"; };
@@ -135,8 +137,6 @@
 		06BFA6281D660D5100B40124 /* ShortcutPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutPreferencesViewController.swift; sourceTree = "<group>"; };
 		06BFA6291D660D5100B40124 /* ShortcutPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortcutPreferencesViewController.xib; sourceTree = "<group>"; };
 		06BFA62F1D669B8900B40124 /* SnipManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnipManager.framework; path = Carthage/Build/Mac/SnipManager.framework; sourceTree = "<group>"; };
-		06BFA6321D66D58B00B40124 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = PhotoCloud/Framework/Realm.framework; sourceTree = "<group>"; };
-		06BFA6331D66D58B00B40124 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = PhotoCloud/Framework/RealmSwift.framework; sourceTree = "<group>"; };
 		06BFA6391D66D5FA00B40124 /* PhotoCloudItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCloudItemModel.swift; sourceTree = "<group>"; };
 		06BFA63B1D66D9CF00B40124 /* PhotoCloudStoreProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCloudStoreProvider.swift; sourceTree = "<group>"; };
 		06BFA63E1D66E7A100B40124 /* HistoryWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWindowController.swift; sourceTree = "<group>"; };
@@ -156,11 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0638F8851D76ABB4006CE17B /* ShortcutRecorder.framework in Frameworks */,
-				06BFA6341D66D58B00B40124 /* Realm.framework in Frameworks */,
 				062A2AA41D67778000957D9B /* PTHotKey.framework in Frameworks */,
+				064F9F411D7920E800EFC638 /* RealmSwift.framework in Frameworks */,
 				06BFA6301D669B8900B40124 /* SnipManager.framework in Frameworks */,
-				06BFA6361D66D58B00B40124 /* RealmSwift.framework in Frameworks */,
 				7EDEE94EE08F7136DDBC54DA /* libPods-PhotoCloud.a in Frameworks */,
+				064F9F3F1D7920E800EFC638 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,10 +353,10 @@
 		33B477E4E69B07F6B2FE0DFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				064F9F3D1D7920E800EFC638 /* Realm.framework */,
+				064F9F3E1D7920E800EFC638 /* RealmSwift.framework */,
 				0638F8841D76ABB4006CE17B /* ShortcutRecorder.framework */,
 				062A2A9E1D6776F500957D9B /* PTHotKey.framework */,
-				06BFA6321D66D58B00B40124 /* Realm.framework */,
-				06BFA6331D66D58B00B40124 /* RealmSwift.framework */,
 				06BFA62F1D669B8900B40124 /* SnipManager.framework */,
 				8A67C8629CC5102529B4AA3E /* libPods-PhotoCloud.a */,
 			);
@@ -409,6 +409,7 @@
 				TargetAttributes = {
 					064B4B9E1D658806000B5E7C = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -650,6 +651,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hj.sk.PhotoCloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PhotoCloud/PhotoCloud-Bridge-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -671,6 +673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hj.sk.PhotoCloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PhotoCloud/PhotoCloud-Bridge-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

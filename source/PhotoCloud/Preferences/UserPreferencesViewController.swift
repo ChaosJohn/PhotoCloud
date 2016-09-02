@@ -38,7 +38,7 @@ class UserPreferencesViewController: NSViewController {
         tx_weburl.stringValue = config.WebUrl!
     }
     
-    @IBAction func savePref(sender: AnyObject) {
+    @IBAction func savePref(_ sender: AnyObject) {
         if isEmptyTextField(tx_bucket) || isEmptyTextField(tx_ak) || isEmptyTextField(tx_sk) || isEmptyTextField(tx_weburl){
             return
         }
@@ -47,7 +47,7 @@ class UserPreferencesViewController: NSViewController {
         self.view.window?.close()
     }
     
-    func isEmptyTextField(sender: NSTextField) -> Bool {
+    func isEmptyTextField(_ sender: NSTextField) -> Bool {
         return sender.stringValue.isEmpty
     }
     

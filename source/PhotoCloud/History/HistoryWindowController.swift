@@ -12,7 +12,7 @@ class HistoryWindowController: NSWindowController {
     @IBOutlet var tableview: NSTableView!
 
     @IBOutlet var scrollview: NSScrollView!
-    private var uploadHistory = NSMutableArray()
+    fileprivate var uploadHistory = NSMutableArray()
       @IBOutlet var view: NSView!
     convenience init() {
         self.init(windowNibName: "HistoryWindowController")
@@ -21,42 +21,42 @@ class HistoryWindowController: NSWindowController {
         super.windowDidLoad()
        
         
-        tableview.selectionHighlightStyle = .Regular
-        tableview.gridStyleMask = .GridNone
-        tableview.registerNib(NSNib(nibNamed: "HistoryTableCell", bundle: nil), forIdentifier: "HistoryTableCell")
+        tableview.selectionHighlightStyle = .regular
+        tableview.gridStyleMask = NSTableViewGridLineStyle()
+        tableview.register(NSNib(nibNamed: "HistoryTableCell", bundle: nil), forIdentifier: "HistoryTableCell")
         
        
         
-        NSNotificationCenter.defaultCenter().addObserverForName(NSWindowWillCloseNotification, object: self.window, queue: nil) { notification in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSWindowWillClose, object: self.window, queue: nil) { notification in
             NSApp.stopModal()
         }
         
         if let window = window {
             window.title = "上传记录"
-            window.styleMask = NSTitledWindowMask | NSClosableWindowMask | NSFullSizeContentViewWindowMask | NSResizableWindowMask
+//            window.styleMask = NSTitledWindowMask | NSClosableWindowMask | NSFullSizeContentViewWindowMask | NSResizableWindowMask
         }
 
     }
     
-    override func showWindow(sender: AnyObject?) {
+    override func showWindow(_ sender: Any?) {
         super.showWindow(sender)
         uploadHistory.removeAllObjects()
         let allHistorys = PhotoCloudStoreProvider.SharedPhotoCloudStore().photoCloudItemList
         for item in allHistorys {
-            uploadHistory.addObject(item)
+            uploadHistory.add(item)
         }
         tableview.reloadData()
     }
     
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
 extension HistoryWindowController: NSTableViewDataSource {
     
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return self.uploadHistory.count
     }
     
@@ -64,18 +64,18 @@ extension HistoryWindowController: NSTableViewDataSource {
 
 extension HistoryWindowController: NSTableViewDelegate {
     
-    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 100
     }
     
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cell = tableView.makeViewWithIdentifier("HistoryTableCell", owner: tableView) as? HistoryTableCell
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.make(withIdentifier: "HistoryTableCell", owner: tableView) as? HistoryTableCell
         let item = self.uploadHistory[row] as? PhotoCloudItemModel
         cell?.tx_fileName.stringValue = item?.fileName ?? ""
         cell?.tx_downloadUrl.stringValue = item?.downloadUrl ?? ""
         cell?.imageview?.setImageURL(item?.downloadUrl ?? "")
         cell?.wantsLayer = true
-        cell?.layer?.backgroundColor = NSColor.whiteColor().CGColor
+        cell?.layer?.backgroundColor = NSColor.white.cgColor
         return cell
     }
 }

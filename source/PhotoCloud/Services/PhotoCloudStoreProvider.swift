@@ -21,14 +21,14 @@ class PhotoCloudStoreProvider {
     
     /// - Warning: can only be used from the main thread
     var photoCloudItemList: Results<PhotoCloudItemModel> {
-        return realm.objects(PhotoCloudItemModel.self).sorted(sortDescriptorsForPhotoCloudList)
+        return realm.allObjects(ofType: PhotoCloudItemModel.self).sorted(with: sortDescriptorsForPhotoCloudList)
     }
     
     /// Orders the PhotoCloudItemModel by createTime (descending)
     lazy var sortDescriptorsForPhotoCloudList: [SortDescriptor] = [SortDescriptor(property: "createTime", ascending: false)]
 
     /// save item
-    func addItem(item: Object) {
+    func addItem(_ item: Object) {
         let backgroundRealm = try! Realm()
         backgroundRealm.beginWrite()
         backgroundRealm.add(item, update: true)

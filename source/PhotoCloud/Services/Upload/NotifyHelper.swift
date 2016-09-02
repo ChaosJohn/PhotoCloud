@@ -10,15 +10,15 @@ import Foundation
 
 struct NotifyHelper {
     
-   static func showNotify(title:String, desc:String = ""){
+   static func showNotify(_ title:String, desc:String = ""){
         if !Preferences.SharedPreferences().isNotifyEnable {
             return
         }
-        NSApp.activateIgnoringOtherApps(true)
+        NSApp.activate(ignoringOtherApps: true)
         let notification = NSUserNotification.init()
         notification.title = title
         notification.informativeText = desc
         notification.soundName = NSUserNotificationDefaultSoundName
-        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+        NSUserNotificationCenter.default.deliver(notification)
     }
 }

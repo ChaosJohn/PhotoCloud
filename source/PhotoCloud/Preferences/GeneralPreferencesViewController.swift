@@ -23,17 +23,17 @@ class GeneralPreferencesViewController: NSViewController {
         self.tx_prefix.stringValue = Preferences.SharedPreferences().filePrefix
     }
     
-    @IBAction func checkStateNotify(sender: NSButton) {
+    @IBAction func checkStateNotify(_ sender: NSButton) {
         Preferences.SharedPreferences().isNotifyEnable = sender.state != NSOffState
        
     }
     
-    @IBAction func checkStateAtLogin(sender: NSButton) {
+    @IBAction func checkStateAtLogin(_ sender: NSButton) {
         //http://atjason.com/en/Cocoa/SwiftCocoa_Auto%20Launch%20at%20Login.html  未实现
         Preferences.SharedPreferences().isAtLogin = sender.state != NSOffState
-        let appBundleIdentifier = NSBundle.mainBundle().bundleIdentifier ?? ""
+        let appBundleIdentifier = Bundle.main.bundleIdentifier ?? ""
         let autoLaunch = (sender.state == NSOnState)
-        if SMLoginItemSetEnabled(appBundleIdentifier, autoLaunch) {
+        if SMLoginItemSetEnabled(appBundleIdentifier as CFString, autoLaunch) {
             if autoLaunch {
                 NSLog("Successfully add login item.")
             } else {
@@ -45,7 +45,7 @@ class GeneralPreferencesViewController: NSViewController {
         }
     }
     
-    @IBAction func save(sender: AnyObject) {
+    @IBAction func save(_ sender: AnyObject) {
         if self.tx_prefix.stringValue.isEmpty{
             return
         }
@@ -53,7 +53,7 @@ class GeneralPreferencesViewController: NSViewController {
         UITools.removeTextFieldFocus(self.tx_prefix)
     }
     
-    private func updateCheckState(sender:NSButton,isCheck:Bool) {
+    fileprivate func updateCheckState(_ sender:NSButton,isCheck:Bool) {
         if isCheck {
             sender.state = NSOnState
         } else {

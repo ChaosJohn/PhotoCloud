@@ -9,11 +9,11 @@
 import Foundation
 
 struct UITools {
-    static func disableTextFieldDefaultFocus(sender: NSTextField){
+    static func disableTextFieldDefaultFocus(_ sender: NSTextField){
         sender.refusesFirstResponder = true
     }
     
-    static func removeTextFieldFocus(sender: NSTextField){
+    static func removeTextFieldFocus(_ sender: NSTextField){
         sender.window?.makeFirstResponder(nil)
     }
 

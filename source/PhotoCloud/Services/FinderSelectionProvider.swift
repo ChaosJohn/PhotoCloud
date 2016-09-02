@@ -9,13 +9,13 @@
 import Foundation
 import ScriptingBridge
 
-public class FinderSelectionProvider {
+open class FinderSelectionProvider {
     
-    public static let instance = FinderSelectionProvider()
+    open static let instance = FinderSelectionProvider()
     
-    private init(){}
+    fileprivate init(){}
     
-    public func getSelectedFolders() -> [NSURL] {
+    open func getSelectedFolders() -> [URL] {
         guard let finder = SBApplication(bundleIdentifier: "com.apple.finder") as? FinderApplication,
             let result = finder.selection else {
                 NSLog("No items selected")
@@ -26,16 +26,16 @@ public class FinderSelectionProvider {
             return []
         }
         
-        let items = selection.arrayByApplyingSelector(Selector("URL"))
-        let fm = NSFileManager.defaultManager()
+        let items = (selection as AnyObject).array(byApplying: #selector(getter: NSTextCheckingResult.url))
+        let fm = FileManager.default
         return items.filter {
             item -> Bool in
-            let url = NSURL(string: item as! String)!
-            return fm.checkIfDirectoryExists(url.path!)
-            }.map { return NSURL(string: $0 as! String)!}
+            let url = URL(string: item as! String)!
+            return fm.checkIfDirectoryExists(url.path)
+            }.map { return URL(string: $0 as! String)!}
     }
     
-    public func getSelectedFiles() -> [NSURL] {
+    open func getSelectedFiles() -> [URL] {
         guard let finder = SBApplication(bundleIdentifier: "com.apple.finder") as? FinderApplication,
             let result = finder.selection else {
                 NSLog("No items selected")
@@ -46,24 +46,18 @@ public class FinderSelectionProvider {
             return []
         }
         
-        let items = selection.arrayByApplyingSelector(Selector("URL"))
-        let fm = NSFileManager.defaultManager()
+        let items = (selection as AnyObject).array(byApplying: #selector(getter: NSTextCheckingResult.url))
+        let fm = FileManager.default
         return items.filter {
             item -> Bool in
-            let url = NSURL(string: item as! String)!
-            return fm.checkIfFileExists(url.path!)
-            }.map { return NSURL(string: $0 as! String)!}
+            let url = URL(string: item as! String)!
+            return fm.checkIfFileExists(url.path)
+            }.map { return URL(string: $0 as! String)!}
     }
     
     
-    public func getSelectedFAcceptableFiles()->[NSURL] {
-       let urls = getSelectedFiles()
-        return urls.filter({ (item) -> Bool in
-            guard let _ = item.path?.fileExtension() else {
-                return false
-            }
-            return true
-        })
+    open func getSelectedFAcceptableFiles()->[URL] {
+        return getSelectedFiles()
     }
     
 

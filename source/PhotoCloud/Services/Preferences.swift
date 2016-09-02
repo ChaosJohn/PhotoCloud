@@ -15,9 +15,9 @@ class Preferences {
         return _SharedPreferences
     }
     
-    private var userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    fileprivate var userDefaults:UserDefaults = UserDefaults.standard
     
-    private struct Keys {
+    fileprivate struct Keys {
         static let Pref_QN_Account_Bucket = "Pref_QN_Account_Bucket"
         static let Pref_QN_Account_Access_Key = "Pref_QN_Account_Access_Key"
         static let Pref_QN_Account_Secret_Key = "Pref_QN_Account_Secret_Key"
@@ -28,21 +28,21 @@ class Preferences {
         static let Pref_Gerenal_File_prefix = "Pref_Gerenal_File_prefix"
     }
     
-    private struct DefaultValues {
+    fileprivate struct DefaultValues {
         
     }
     
     var currentQNAccountConfig:QNAccountConfig? {
         set{
-            userDefaults.setObject(newValue?.Bucket, forKey:Keys.Pref_QN_Account_Bucket)
-            userDefaults.setObject(newValue?.Access_Key, forKey:Keys.Pref_QN_Account_Access_Key)
-            userDefaults.setObject(newValue?.Secret_Key, forKey:Keys.Pref_QN_Account_Secret_Key)
-            userDefaults.setObject(newValue?.WebUrl, forKey:Keys.Pref_QN_Account_Web_Url)
+            userDefaults.set(newValue?.Bucket, forKey:Keys.Pref_QN_Account_Bucket)
+            userDefaults.set(newValue?.Access_Key, forKey:Keys.Pref_QN_Account_Access_Key)
+            userDefaults.set(newValue?.Secret_Key, forKey:Keys.Pref_QN_Account_Secret_Key)
+            userDefaults.set(newValue?.WebUrl, forKey:Keys.Pref_QN_Account_Web_Url)
         }
         
         get {
-            if let bucket = userDefaults.objectForKey(Keys.Pref_QN_Account_Bucket) as? String {
-                return QNAccountConfig(bucket: bucket,ak: userDefaults.objectForKey(Keys.Pref_QN_Account_Access_Key) as? String,sk: userDefaults.objectForKey(Keys.Pref_QN_Account_Secret_Key) as? String, webUrl: userDefaults.objectForKey(Keys.Pref_QN_Account_Web_Url) as? String)
+            if let bucket = userDefaults.object(forKey: Keys.Pref_QN_Account_Bucket) as? String {
+                return QNAccountConfig(bucket: bucket,ak: userDefaults.object(forKey: Keys.Pref_QN_Account_Access_Key) as? String,sk: userDefaults.object(forKey: Keys.Pref_QN_Account_Secret_Key) as? String, webUrl: userDefaults.object(forKey: Keys.Pref_QN_Account_Web_Url) as? String)
             }
             
             return nil
@@ -51,10 +51,10 @@ class Preferences {
     
     var isAtLogin:Bool {
         set {
-          userDefaults.setObject(newValue, forKey:Keys.Pref_Gerenal_AtLogin)
+          userDefaults.set(newValue, forKey:Keys.Pref_Gerenal_AtLogin)
         }
         get {
-            if let atlogin_state = userDefaults.objectForKey(Keys.Pref_Gerenal_AtLogin) as? Bool {
+            if let atlogin_state = userDefaults.object(forKey: Keys.Pref_Gerenal_AtLogin) as? Bool {
                 return atlogin_state
             }
             
@@ -64,10 +64,10 @@ class Preferences {
     
     var isNotifyEnable:Bool {
         set {
-            userDefaults.setObject(newValue, forKey:Keys.Pref_Gerenal_Notify)
+            userDefaults.set(newValue, forKey:Keys.Pref_Gerenal_Notify)
         }
         get {
-            if let notify_state = userDefaults.objectForKey(Keys.Pref_Gerenal_Notify) as? Bool {
+            if let notify_state = userDefaults.object(forKey: Keys.Pref_Gerenal_Notify) as? Bool {
                 return notify_state
             }
             
@@ -77,10 +77,10 @@ class Preferences {
     
     var filePrefix:String {
         set {
-            userDefaults.setObject(newValue, forKey:Keys.Pref_Gerenal_File_prefix)
+            userDefaults.set(newValue, forKey:Keys.Pref_Gerenal_File_prefix)
         }
         get {
-            if let prefix = userDefaults.objectForKey(Keys.Pref_Gerenal_File_prefix) as? String {
+            if let prefix = userDefaults.object(forKey: Keys.Pref_Gerenal_File_prefix) as? String {
                 return prefix
             }
             

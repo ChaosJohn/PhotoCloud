@@ -1,2 +1,3 @@
 github "liufsd/MacSnipManager" "83f00c0c8ef5838164b617568bde9ca765269ba6"
 git "https://github.com/Kentzo/ShortcutRecorder" "3adf5909a503b6ebf769a1e2a24fc389a3556ed3"
+github "realm/realm-cocoa" "ddb20c11706f2a480915f533810fb0a42cf81bc0"

@@ -10,6 +10,6 @@ import Foundation
 
 public protocol UploadProtocol {
     
-    func uploadFile(fileUrl: NSURL)
+    func uploadFile(_ fileUrl: URL)
     
 }

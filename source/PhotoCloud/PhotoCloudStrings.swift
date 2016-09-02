@@ -9,8 +9,8 @@
 import Foundation
 
 struct PhotoCloudStrings {
-     static let APPNAME = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String ?? "PhotoCloud"
-     static let APP_VERSION = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+     static let APPNAME = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "PhotoCloud"
+     static let APP_VERSION = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
      static let COMMANDLINE_VERSION = "1.0.0"
      static let AcceptableFile = ["png","jpg","jpeg","gif","mp4","mov","zip","pdf","mp3"]
     
@@ -20,25 +20,25 @@ struct PhotoCloudStrings {
     struct FileConstants {
         static func imageTempFilePath() -> String {
             var imageCacheTempFolder: String?
-            if let cacheFolder = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first {
+            if let cacheFolder = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
                 imageCacheTempFolder = cacheFolder
             } else {
                 imageCacheTempFolder = "~/temp"
             }
             imageCacheTempFolder  = imageCacheTempFolder! + "/PhotoCloudImageTemp"
-            if !NSFileManager.defaultManager().fileExistsAtPath(imageCacheTempFolder!) {
-                try! NSFileManager.defaultManager().createDirectoryAtPath(imageCacheTempFolder!, withIntermediateDirectories: true, attributes: nil)
+            if !FileManager.default.fileExists(atPath: imageCacheTempFolder!) {
+                try! FileManager.default.createDirectory(atPath: imageCacheTempFolder!, withIntermediateDirectories: true, attributes: nil)
             }
             return imageCacheTempFolder!
         }
         
         static func buildTempImagePath() -> String {
-            let formatter: NSDateFormatter = NSDateFormatter()
+            let formatter: DateFormatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
-            return buildTempImageCachePath(formatter.stringFromDate(NSDate()) + ".png")
+            return buildTempImageCachePath(formatter.string(from: Date()) + ".png")
         }
         
-        static func buildTempImageCachePath(imageName: String) -> String {
+        static func buildTempImageCachePath(_ imageName: String) -> String {
             return imageTempFilePath() + "/" + imageName
         }
     }
