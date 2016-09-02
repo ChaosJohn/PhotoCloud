@@ -36,9 +36,9 @@ open class QiniuProvider: UploadProtocol {
         }
         upManager?.putFile(fileUrl.path, key: fileName, token: token, complete: { (info, key, resp) in
             if (resp == nil) {
-//                print("upload fail \(info?.error.debugDescription)")
-//                LogProvider.writeLogFile("uploadFile: complete error: " + info?.error.description)
-//                NotifyHelper.showNotify( "文件上传失败了伙计",desc: info.error.description)
+                print("upload fail \(info?.error)")
+                LogProvider.writeLogFile("uploadFile: complete error: \(info?.error)")
+                NotifyHelper.showNotify( "文件上传失败了伙计",desc: "\(info?.error)")
                 return
             }
             NSLog("upload success: %@", key ?? "")
