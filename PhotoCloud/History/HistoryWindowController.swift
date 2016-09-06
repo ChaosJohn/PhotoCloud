@@ -74,8 +74,6 @@ extension HistoryWindowController: NSTableViewDelegate {
         cell?.tx_fileName.stringValue = item?.fileName ?? ""
         cell?.tx_downloadUrl.stringValue = item?.downloadUrl ?? ""
         cell?.imageview?.setImageURL(item?.downloadUrl ?? "")
-        cell?.wantsLayer = true
-        cell?.layer?.backgroundColor = NSColor.white.cgColor
         return cell
     }
 }
